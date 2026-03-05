@@ -127,24 +127,36 @@ endif
 
 ifeq ($(call is-board-platform-in-list,$(6_6_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 6.6
+BOARD_VARIANT := sm8750
 else ifeq ($(call is-board-platform-in-list,$(6_1_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 6.1
+BOARD_VARIANT := sm8650
 else ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.15
+BOARD_VARIANT := sm8550
 else ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.10
+BOARD_VARIANT := sm8450
 else ifeq ($(call is-board-platform-in-list,$(5_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 5.4
+BOARD_VARIANT := sm8350
 else ifeq ($(call is-board-platform-in-list,$(4_19_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.19
+BOARD_VARIANT := sm8250
 else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.14
+BOARD_VARIANT := sm8150
 else ifeq ($(call is-board-platform-in-list,$(4_9_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.9
+BOARD_VARIANT := sdm845
 else ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 4.4
+BOARD_VARIANT := msm8998
 else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 3.18
+BOARD_VARIANT := msm8996
+else
+BOARD_VARIANT := $(TARGET_BOARD_PLATFORM)
 endif
 
 ifneq (,$(filter 3.18 4.4 4.9 4.14 4.19 5.4, $(TARGET_KERNEL_VERSION)))
