@@ -15,8 +15,8 @@ from extract_utils.main import ExtractUtils
 from extract_utils_qti.module import ExtractUtilsQTIModule, QTIComponentType
 
 namespace_imports = [
-    'hardware/qcom/display',
-    'hardware/qcom/display/libdebug',
+    'hardware/qcom-caf/sm8250/display',
+    'hardware/qcom-caf/sm8250/display/libdebug',
     'vendor/qcom/common/vendor/qseecomd-legacy',
     'vendor/qcom/common/vendor/qseecomd',
 ]

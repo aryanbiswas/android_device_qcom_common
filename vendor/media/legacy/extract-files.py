@@ -16,7 +16,7 @@ from extract_utils.main import ExtractUtils
 from extract_utils_qti.module import ExtractUtilsQTIModule, QTIComponentType
 
 namespace_imports = [
-    'hardware/qcom/display',
+    'hardware/qcom-caf/sm8250/display',
     'vendor/qcom/common/vendor/dsprpcd',
 ]
 
