@@ -5,6 +5,10 @@
 
 TARGET_WFD_COMPONENT_VARIANT := wfd
 
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libnl
+
 PRODUCT_BOOT_JARS += \
     WfdCommon
 

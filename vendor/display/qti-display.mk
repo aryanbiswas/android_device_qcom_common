@@ -14,6 +14,12 @@
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
+# Packages
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common-V1-ndk.vendor \
+    libqdutils \
+    libqservice
+
 # Properties for <6.1 targets
 # These are already set on 6.1+.
 ifneq (,$(filter 3.18 4.4 4.9 4.14 4.19 5.4 5.10 5.15, $(TARGET_KERNEL_VERSION)))
