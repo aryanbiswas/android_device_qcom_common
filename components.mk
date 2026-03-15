@@ -28,17 +28,17 @@ endif
 # QTI Common Components
 
 ifneq (,$(filter adreno, $(TARGET_COMMON_QTI_COMPONENTS)))
-  ifeq ($(call is-board-platform-in-list,$(6_6_FAMILY)),true)
+  ifeq ($(call is-board-platform-in-list,$(UM_6_6_FAMILY)),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-v
-  else ifeq ($(call is-board-platform-in-list,$(6_1_FAMILY)),true)
+  else ifeq ($(call is-board-platform-in-list,$(UM_6_1_FAMILY)),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-u
-  else ifeq ($(call is-board-platform-in-list,$(5_15_FAMILY)),true)
+  else ifeq ($(call is-board-platform-in-list,$(UM_5_15_FAMILY)),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-t
-  else ifeq ($(call is-board-platform-in-list,$(5_10_FAMILY)),true)
+  else ifeq ($(call is-board-platform-in-list,$(UM_5_10_FAMILY)),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-s
-  else ifeq ($(call is-board-platform-in-list,$(4_14_FAMILY) $(4_19_FAMILY) $(5_4_FAMILY)),true)
+  else ifeq ($(call is-board-platform-in-list,$(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY)),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-r
-  else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY) $(4_4_FAMILY) msm8953),true)
+  else ifeq ($(call is-board-platform-in-list,$(UM_3_18_FAMILY) $(UM_4_4_FAMILY) msm8953),true)
     TARGET_ADRENO_COMPONENT_VARIANT ?= adreno-5xx
   else
     $(error "Adreno component is enabled, but there is not a variant available for your platform.")
@@ -84,7 +84,7 @@ endif
 
 ifneq (,$(filter gps, $(TARGET_COMMON_QTI_COMPONENTS)))
   include $(QCOM_COMMON_PATH)/system/gps/qti-gps.mk
-  ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY) $(4_9_FAMILY) $(4_14_FAMILY) $(4_19_FAMILY) $(5_4_FAMILY)),true)
+  ifeq ($(call is-board-platform-in-list,$(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY)),true)
     TARGET_GPS_COMPONENT_VARIANT ?= gps-legacy
   else
     TARGET_GPS_COMPONENT_VARIANT ?= gps
@@ -119,7 +119,7 @@ ifneq (,$(filter perf, $(TARGET_COMMON_QTI_COMPONENTS)))
 endif
 
 ifneq (,$(filter qseecomd, $(TARGET_COMMON_QTI_COMPONENTS)))
-  ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY) $(4_9_FAMILY) $(4_14_FAMILY) $(4_19_FAMILY)),true)
+  ifeq ($(call is-board-platform-in-list,$(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)),true)
     TARGET_QSEECOMD_COMPONENT_VARIANT ?= qseecomd-legacy
   else
     TARGET_QSEECOMD_COMPONENT_VARIANT ?= qseecomd
@@ -145,7 +145,7 @@ ifneq (,$(filter wfd, $(TARGET_COMMON_QTI_COMPONENTS)))
 endif
 
 ifneq (,$(filter wlan, $(TARGET_COMMON_QTI_COMPONENTS)))
-  ifeq ($(call is-board-platform-in-list,$(4_4_FAMILY) $(4_9_FAMILY) $(4_14_FAMILY) $(4_19_FAMILY) $(5_4_FAMILY)),true)
+  ifeq ($(call is-board-platform-in-list,$(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY) $(UM_5_4_FAMILY)),true)
     TARGET_WLAN_COMPONENT_VARIANT ?= wlan-legacy
   else
     TARGET_WLAN_COMPONENT_VARIANT ?= wlan
